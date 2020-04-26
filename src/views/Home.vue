@@ -1,17 +1,23 @@
 <template>
   <div class="home">
-    <NavBar />
+    <Header />
+    <Money />
+    <Items />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import NavBar from "@/components/NavBar.vue";
+import Header from "@/components/Header.vue";
+import Money from "@/components/Money.vue";
+import Items from "@/components/Items.vue";
 
 export default {
   name: "Home",
   components: {
-    NavBar
+    Header,
+    Money,
+    Items
   }
 };
 </script>
