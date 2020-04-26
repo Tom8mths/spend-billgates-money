@@ -2,8 +2,6 @@
   <div id="app">
     <div id="nav">
       <NavBar />
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
     </div>
     <router-view />
   </div>
@@ -21,16 +19,20 @@ export default {
 </script>
 
 <style lang="scss">
+@import "@/assets/sass/_variables.scss";
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: "Roboto", sans-serif;
 }
+html {
+  background-color: $secondary;
+}
 
 .container {
-  background-color: blue;
   width: 50vw;
   margin: 0 auto;
 }
