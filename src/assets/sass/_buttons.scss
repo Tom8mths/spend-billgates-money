@@ -1,0 +1,23 @@
+.btn {
+  font-family: Arial, Helvetica, sans-serif !important;
+  padding: 9px 12px;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 3px;
+  margin: 0 10px;
+  color: $white;
+}
+
+.btn-primary {
+  background-color: $primary;
+}
+
+.btn-danger {
+  background-color: $danger;
+}
+
+.disabled {
+  background-color: $secondary;
+  color: $black!important;
+}
