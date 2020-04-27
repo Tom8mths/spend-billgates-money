@@ -2,7 +2,7 @@
   <div class="container__items_item">
     <img :src="getImage(image)" :alt="name" />
     <h3>{{ name }}</h3>
-    <h4>${{ price }}</h4>
+    <h4>{{ formatMoney(price) }}</h4>
     <div class="actions">
       <button
         v-on:click="sell(id)"
@@ -41,6 +41,14 @@ export default {
     },
     sell(id) {
       this.$store.commit("removeFromCart", id);
+    },
+    formatMoney(money) {
+      const formatter = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+        minimumFractionDigits: 0
+      });
+      return formatter.format(money);
     }
   }
 };

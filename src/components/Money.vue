@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="container__money">
-      <div id="moneyNav" class="money-nav sticky">${{ currentMoney }} left</div>
+      <div id="moneyNav" class="money-nav sticky">{{ currentMoney }} left</div>
     </div>
   </div>
 </template>
@@ -11,7 +11,12 @@ export default {
   name: "Money",
   computed: {
     currentMoney() {
-      return this.$store.state.totalMoney;
+      const formatter = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+        minimumFractionDigits: 0
+      });
+      return formatter.format(this.$store.state.totalMoney);
     }
   },
 

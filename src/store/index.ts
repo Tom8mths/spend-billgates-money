@@ -304,6 +304,7 @@ export default new Vuex.Store({
     ]
   },
   mutations: {
+    
     addItem(state, item: Item) {
       state.items.push(item);
     },
@@ -322,9 +323,6 @@ export default new Vuex.Store({
 
       state.totalMoney += item.price;
       item.quantity--;
-    },
-    formatNumber(num) {
-      return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
     }
   },
   actions: {},
