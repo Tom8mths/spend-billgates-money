@@ -11,7 +11,7 @@
       >
         Sell
       </button>
-      <input type="number" :value="quantity" />
+      <input type="number" :value="quantity" readonly />
       <button
         v-on:click="buy(id)"
         class="btn btn-primary"
