@@ -23,7 +23,7 @@ export default {
   mounted: function() {
     const stickyChildren = document.querySelectorAll(".container__money")[0];
     const stickyParent = stickyChildren.parentElement;
-    stickyParent.classList.add("sticky");
+    if (stickyParent) stickyParent.classList.add("sticky");
   }
 };
 </script>
