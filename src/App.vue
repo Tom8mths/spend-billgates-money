@@ -33,6 +33,7 @@ export default {
 }
 html {
   background-color: $secondary;
+  scroll-behavior: smooth;
 }
 
 .container {
