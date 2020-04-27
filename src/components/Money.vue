@@ -1,45 +1,54 @@
 <template>
   <div class="container">
-    <div class="money-nav fixed">
-      $90,000,000,000 left
+    <div class="container__money">
+      <div id="moneyNav" class="money-nav sticky">${{ currentMoney }} left</div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-// export default {
-//   name: "Money",
-//   methods: {
-//     sticky: function () {
-//       window.onscroll = function() {myFunction()};
+export default {
+  name: "Money",
+  computed: {
+    currentMoney() {
+      return this.$store.state.totalMoney;
+    }
+  },
 
-//       const header = document.getElementById("myHeader");
-//       const sticky = header.offsetTop;
-
-//       function myFunction() {
-//         if (window.pageYOffset > sticky) {
-//           header.classList.add("sticky");
-//         } else {
-//           header.classList.remove("sticky");
-//         }
-//       }
-//     }
-//   }
-// };
+  mounted: function() {
+    const stickyChildren = document.querySelectorAll(".container__money")[0];
+    const stickyParent = stickyChildren.parentElement;
+    stickyParent.classList.add("sticky");
+  }
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import "@/assets/sass/_variables.scss";
 
-.money-nav {
-  background-color: $primary;
-  color: $white;
+.container__money {
+  .money-nav {
+    background-color: $primary;
+    color: $white;
+    margin: 10px 0;
+    padding: 20px;
+    font-size: 32px;
+    font-weight: 900;
+    text-align: center;
+  }
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  margin: 0;
   width: 100%;
-  margin: 10px 0;
-  padding: 20px;
-  font-size: 32px;
-  font-weight: 900;
-  text-align: center;
+  max-width: 1000px;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
 }
 </style>
