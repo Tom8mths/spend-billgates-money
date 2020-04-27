@@ -22,6 +22,7 @@ nav {
     color: $black;
     text-decoration: none;
     font-weight: 800;
+    margin-left: 10px;
   }
 }
 </style>
