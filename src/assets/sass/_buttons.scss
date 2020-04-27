@@ -20,4 +20,5 @@
 .disabled {
   background-color: $secondary;
   color: $black!important;
+  pointer-events: none;
 }
