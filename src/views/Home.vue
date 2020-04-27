@@ -3,6 +3,7 @@
     <Header />
     <Money />
     <Items />
+    <Cart />
   </div>
 </template>
 
@@ -11,13 +12,15 @@
 import Header from "@/components/Header.vue";
 import Money from "@/components/Money.vue";
 import Items from "@/components/Items.vue";
+import Cart from "@/components/Cart.vue";
 
 export default {
   name: "Home",
   components: {
     Header,
     Money,
-    Items
+    Items,
+    Cart
   }
 };
 </script>

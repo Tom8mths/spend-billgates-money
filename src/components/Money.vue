@@ -6,7 +6,27 @@
   </div>
 </template>
 
-<script lang="ts"></script>
+<script lang="ts">
+// export default {
+//   name: "Money",
+//   methods: {
+//     sticky: function () {
+//       window.onscroll = function() {myFunction()};
+
+//       const header = document.getElementById("myHeader");
+//       const sticky = header.offsetTop;
+
+//       function myFunction() {
+//         if (window.pageYOffset > sticky) {
+//           header.classList.add("sticky");
+//         } else {
+//           header.classList.remove("sticky");
+//         }
+//       }
+//     }
+//   }
+// };
+</script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">

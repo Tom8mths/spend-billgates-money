@@ -11,8 +11,8 @@
         <h4>${{ item.price }}</h4>
         <div class="actions">
           <button class="btn btn-danger disabled">Sell</button>
-          <input type="text" />
-          <button class="btn btn-primary">Buy</button>
+          <input type="number" v-model="counter" />
+          <button v-on:click="increment" class="btn btn-primary">Buy</button>
         </div>
       </div>
     </div>
@@ -239,7 +239,7 @@ export default {
           id: 36,
           name: "Rocket",
           price: 60000000,
-          image: "bigmac.jpg"
+          image: "rocket.jpg"
         },
         {
           id: 37,
@@ -251,7 +251,7 @@ export default {
           id: 38,
           name: "Mona Lisa",
           price: 780000000,
-          image: "bigmac.jpg"
+          image: "monalisa.jpg"
         },
         {
           id: 39,
@@ -283,6 +283,10 @@ export default {
   methods: {
     getImage(image) {
       return require(`../assets/images/${image}`);
+    },
+
+    increment() {
+      this.counter++;
     }
   }
 };
@@ -298,7 +302,8 @@ export default {
   height: auto;
 
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: 33.3% 33.33% 33.3%;
+
   &_item {
     vertical-align: top;
     display: inline-block;
@@ -306,9 +311,6 @@ export default {
     background-color: $white;
     margin-right: 10px;
     margin-bottom: 10px;
-    &:nth-child(3n) {
-      margin-right: 0;
-    }
     img {
       margin: 0 51px;
       padding: 15px 10px 10px;
@@ -322,8 +324,9 @@ export default {
       font-size: 20px;
     }
     .actions {
-      padding: 9px 12px;
+      padding: 9px 0;
       margin: 25px 0 0;
+      white-space: nowrap;
       input {
         max-width: 100px;
         text-align: center;
@@ -336,6 +339,28 @@ export default {
         font-size: 16px;
         font-family: Arial, Helvetica, sans-serif !important;
       }
+    }
+  }
+  @media only screen and (min-width: 1518px) {
+    &_item {
+      &:nth-child(3n) {
+        margin-right: 0;
+      }
+    }
+  }
+  @media only screen and (max-width: 1517px) {
+    grid-template-columns: 50% 50%;
+    &_item {
+      margin-bottom: 10px;
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
+    }
+  }
+  @media only screen and (max-width: 720px) {
+    grid-template-columns: 100%;
+    &_item {
+      margin-right: 0;
     }
   }
 }

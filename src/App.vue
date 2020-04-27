@@ -4,16 +4,19 @@
       <NavBar />
     </div>
     <router-view />
+    <Footer />
   </div>
 </template>
 
 <script>
 import NavBar from "./components/NavBar.vue";
+import Footer from "./components/Footer.vue";
 
 export default {
   name: "App",
   components: {
-    NavBar
+    NavBar,
+    Footer
   }
 };
 </script>
@@ -33,7 +36,8 @@ html {
 }
 
 .container {
-  width: 50vw;
+  width: 100%;
+  max-width: 1000px;
   margin: 0 auto;
 }
 </style>
